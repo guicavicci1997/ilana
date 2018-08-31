@@ -1,0 +1,39 @@
+Limiarizacao = binarizacao (preto e branco)
+
+Limiar "threshold"
+
+
+
+Tipos de binarizacao
+Simples = ou e preto ou e branco
+
+Adaptativca = regioes diferentes da imagem
+
+
+
+Segmentacao de imagens
+Retirar informacoes que eu nao quero e tirar apenas o que me interessa
+
+
+Comando
+cv2.threshold (imagem, o ponto, )
+
+
+-----------------------
+
+Transformacoes Morfologicas
+
+Erosao - Pegar uma imagem binaria e aplicar um threshold de erosao
+
+Erosao - Diminui, portanto pode ser usado para separar objetos que estao unidos
+
+Dilatacao - Aumenta, portando pode ser usado para juntar objetos que estao separados
+
+Abertura
+Erosao seguido de uma dilatacao para eliminar ruidos
+
+Fechamento
+...
+
+Gradiente
+Dilatacao, depois erosao, para gerar um contorno

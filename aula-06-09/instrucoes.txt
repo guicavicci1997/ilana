@@ -1,0 +1,59 @@
+No cmd rodar
+
+pip3 install matplotlib
+
+jupyter notebook ou em programas anaconda/jupyter notebook
+
+
+
+no momento de compilar, ir em kernel depois restart clean output
+
+split - dividir a imagem
+
+merge - juntar imagem 
+
+
+
+Filtros espaciais
+Sao matrizes que percorrem toda a imagem, aterrando os valores dos picels a fim de corrigir, 
+suavizar ou realçar determinadas regiões.
+Essas matrizes, chamadas mascaras ou nucleos (kernel), atuam modificando os valores,
+referentes aos niveis de cinza de cada pixel da imagem
+Este procedimento de deslocamento da mascara é chamado convolucao
+
+Classificao de filtros espaciais
+
+Filtros passa-baixa - Atenuam as altas frequencias suavizando a imagem ao atenuar regioes
+que representam bordas de contornos
+No final iremos ter uma convolucao
+
+Filtros passa-alta - Atenuam baixas frequencias realcando as regioes de bordas ou contornos
+No final iremos ter os contornos das imagens
+
+
+Convolucao é o processo de deslocar a mascara pela sua imagem
+
+Kernal é uma raiz quadrada e seu valor sempre é impar
+pois precisa de um numero para centralizar
+
+
+
+Sobel é a juncao de dois filtros
+Ele tem todas informacoes horizontais de bordas
+Separadamente tambem tem todas as informacoes verticais de bordas
+No final todas informacoes sao juntadas
+
+
+Deteccao de bordas de canny
+Tem que detectar todas as bordas
+Nao pode criar novas bordas
+O canny é um algoritmo que usa varios metodos juntos
+Primeiro gauciano para tirar ruidos
+Aplica o sobel para encontrar horizontal e vertical
+Depois linearizacao(binarizacao)
+No final tem uma imagem com segmentacao, mas uma imagem binarizada
+
+
+
+
+

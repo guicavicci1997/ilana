@@ -17,6 +17,14 @@ plt.title(title)
 mediana = cv2.medianBlur(thresh1, 5)
 cv2.imshow("mediana", mediana)
 
+lower_yellow = np.array([255,255,0])
+upper_yellow = np.array([255,255,0])
+
+hsv = cv2.cvtColor(mediana, cv2.COLOR_BGR2HSV)
+
+yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)
+
+cv2.imshow("yellow", yellow)
 
 plt.show()
 

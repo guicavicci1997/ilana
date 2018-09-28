@@ -1,17 +1,27 @@
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
-img = cv2.imread('lena.jpg')
+#Plotando as imagens
+predio1 = cv2.imread('predios1.png', 0)
+predio2 = cv2.imread('predios2.png', 0)
 
+#Equalizando os histogramas
+predio1_H1 = cv2.equalizeHist(predio1)
+predio1_H2 = cv2.equalizeHist(predio2)
 
-borrado = cv2.GaussianBlur(img, (15,15),0)
-subtrair = cv2.subtract(img,borrado)
-mistura = cv2.addWeighted(img, 0.1, borrado, 1, 0)
+#Estabilizada
+plt.subplot(421),plt.imshow(predio1,'gray'),plt.title('Original Predio_1')
+plt.subplot(423),plt.imshow(predio1_H1,'gray'),plt.title('Estabilizada Predio_1')
 
+plt.subplot(425),plt.imshow(predio2,'gray'),plt.title('Original Predio_2')
+plt.subplot(427),plt.imshow(predio1_H2,'gray'),plt.title('Estabilizada Predio_2')
 
-plt.subplot(121), plt.imshow(img), plt.title('original')
-plt.xticks([]),plt.yticks([])
-plt.subplot(122), plt.imshow(mistura), plt.title('borrada')
-plt.xticks([]), plt.yticks([])
+#
+plt.subplot(422),plt.hist(predio1.ravel(),256,[0,256]),plt.title('Histograma - Original Predio_1')
+plt.subplot(424),plt.hist(predio1_H1.ravel(),256,[0,256]),plt.title('Histograma - Estabilizada Predio_1')
+
+plt.subplot(426),plt.hist(predio2.ravel(),256,[0,256]),plt.title('Histograma - Original Predio_2')
+plt.subplot(428),plt.hist(predio1_H2.ravel(),256,[0,256]),plt.title('Histograma - Estabilizada Predio_2')
+
 plt.show()

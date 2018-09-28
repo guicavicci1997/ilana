@@ -14,9 +14,12 @@ images = [img, thresh1]
 plt.subplot(),plt.imshow(thresh1,'gray')
 plt.title(title)
 
+mediana = cv2.medianBlur(thresh1, 5)
+cv2.imshow("mediana", mediana)
+
+
 plt.show()
 
 
-##################
 
 

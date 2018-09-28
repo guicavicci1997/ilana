@@ -2,10 +2,16 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-predio1 = cv2.imread("predios1.png", 0)
+img = cv2.imread('lena.jpg')
 
-cv2.imshow("predio1", predio1)
 
-predio2 = cv2.imread("predios2.png", 0)
+borrado = cv2.GaussianBlur(img, (15,15),0)
+subtrair = cv2.subtract(img,borrado)
+mistura = cv2.addWeighted(img, 0.1, borrado, 1, 0)
 
-cv2.imshow("predio2", predio2)
+
+plt.subplot(121), plt.imshow(img), plt.title('original')
+plt.xticks([]),plt.yticks([])
+plt.subplot(122), plt.imshow(mistura), plt.title('borrada')
+plt.xticks([]), plt.yticks([])
+plt.show()
